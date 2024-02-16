@@ -23,6 +23,7 @@
         <div class="container-fluid">
 
             <div class="row">
+                @can('is_Admin')
                 <!-- Column -->
                 <div class="col-md-6 col-lg-4 col-xlg-3">
                     <div class="card card-hover">
@@ -33,17 +34,19 @@
                         </div>
                     </div>
                 </div>
+                @endcan
                 <!-- Column -->
                 <div class="col-md-6 col-lg-2 col-xlg-3">
                     <div class="card card-hover">
-                        <div class="box bg-warning text-center">
+                        <div class="box bg-primary text-center">
                             <h1 class="font-light text-white"><i class="mdi mdi-collage"></i></h1>
-                            <h5 class="m-b-0 m-t-5 text-white">25</h5>
+                            <h5 class="m-b-0 m-t-5 text-white">{{$total_leaves}}</h5>
                             <h6 class="text-white">Total leaves</h6>
                         </div>
                     </div>
                 </div>
                 <!-- Column -->
+                @can('is_Admin')
                 <div class="col-md-6 col-lg-2 col-xlg-3">
                     <div class="card card-hover">
                         <div class="box bg-danger text-center">
@@ -53,7 +56,8 @@
                         </div>
                     </div>
                 </div>
-
+                @endcan
+                @can('is_Admin')
                 <div class="col-md-6 col-lg-2 col-xlg-3">
                     <div class="card card-hover">
                         <div class="box bg-cyan text-center">
@@ -63,6 +67,7 @@
                         </div>
                     </div>
                 </div>
+                @endcan
             </div>
 
             <div class="row">
