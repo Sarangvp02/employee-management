@@ -23,7 +23,7 @@
         <div class="container-fluid">
 
             <div class="row">
-                @can('is_Admin')
+                @can('isAdmin')
                 <!-- Column -->
                 <div class="col-md-6 col-lg-4 col-xlg-3">
                     <div class="card card-hover">
@@ -35,6 +35,7 @@
                     </div>
                 </div>
                 @endcan
+                @can('isEmployee')
                 <!-- Column -->
                 <div class="col-md-6 col-lg-2 col-xlg-3">
                     <div class="card card-hover">
@@ -45,8 +46,9 @@
                         </div>
                     </div>
                 </div>
+                @endcan
                 <!-- Column -->
-                @can('is_Admin')
+                @can('isAdmin')
                 <div class="col-md-6 col-lg-2 col-xlg-3">
                     <div class="card card-hover">
                         <div class="box bg-danger text-center">
@@ -57,7 +59,7 @@
                     </div>
                 </div>
                 @endcan
-                @can('is_Admin')
+                @can('isAdmin')
                 <div class="col-md-6 col-lg-2 col-xlg-3">
                     <div class="card card-hover">
                         <div class="box bg-cyan text-center">

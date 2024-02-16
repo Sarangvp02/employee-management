@@ -121,6 +121,18 @@ Route::group(['middleware' => 'auth'], function (){
 
     Route::get('downloads',                 [ 'as'=>'download',                   'uses' => 'DownloadController@index']);
 
+    Route::get('vacancy',  ['as' => 'vacancy',   'uses' => 'VacancyController@index']);
+    Route::get('vacancy/create',  ['as' => 'vacancy.create',   'uses' => 'VacancyController@create']);
+    Route::post('vacancy/store',  ['as' => 'vacancy.store',   'uses' => 'VacancyController@store']);
+    Route::post('vacancy/delete',  ['as' => 'vacancy.delete',   'uses' => 'VacancyController@delete']);
+
+    Route::get('complaint', ['as' => 'complaint', 'uses' => 'ComplaintController@index']);
+    Route::get('complaint/view', ['as' => 'complaint.view', 'uses' => 'ComplaintController@show']);
+    Route::post('complaint/store', ['as' => 'complaint.store', 'uses' => 'ComplaintController@store']);
+
+    Route::post('complaint/delete', ['as' => 'complaint.delete', 'uses' => 'ComplaintController@delete']);
+
+
 });
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

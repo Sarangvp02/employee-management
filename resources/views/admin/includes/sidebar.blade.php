@@ -31,6 +31,15 @@
                 </li>
                 @endcan
 
+                @can('isAdmin')
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Vacancy Management</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="{{route('vacancy.create')}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Create Vacancy  </span></a></li>
+                        <li class="sidebar-item"><a href="{{route('vacancy')}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">Vacancies</span></a></li>
+                    </ul>
+                </li>
+                @endcan
+
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Leave management</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
                         @can('isEmployee')
@@ -53,9 +62,17 @@
                 </li>
                 @endcan
 
+                
                 {{--<li class="sidebar-item"><a href="{{route('event')}}" class="sidebar-link"><i class="mdi mdi-calendar-check"></i><span class="hide-menu"> Calendar </span></a></li>--}}
                 <li class="sidebar-item"><a href="{{route('calendar')}}" class="sidebar-link"><i class="mdi mdi-calendar-check"></i><span class="hide-menu"> Calendar </span></a></li>
 
+                @can('isEmployee')
+                    <li class="sidebar-item"><a href="{{route('vacancy')}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">Vacancies</span></a></li>
+                    <li class="sidebar-item"><a href="{{route('complaint')}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">Complaints</span></a></li>
+                @endcan
+                @can('isAdmin')
+                    <li class="sidebar-item"><a href="{{route('complaint.view')}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">Complaints</span></a></li>
+                @endcan
 
                 {{--<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('download')}}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Downloads</span></a></li>--}}
 

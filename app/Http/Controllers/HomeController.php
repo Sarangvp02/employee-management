@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
+use App\{User,Leave};
+use Illuminate\Support\Facades\Auth;
+
 class HomeController extends Controller
 {
     /**
@@ -24,6 +26,8 @@ class HomeController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('admin.dashboard.index',compact('users'));
+        $user = Auth::user();
+        $total_leaves = Leave::where('employee_id',$user->id)->where('is_approved',1)->count();
+        return view('admin.dashboard.index',compact('users','total_leaves'));
     }
 }
