@@ -24,6 +24,7 @@ class DesignationController extends Controller
         return view('admin.designation.index',compact('designations'));
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -122,6 +123,6 @@ class DesignationController extends Controller
         $designation = Designation::find($id);
         $designation -> delete();
         Toastr::error('Designation successfully deleted!','Deleted');
-        return redirect()->route('designation');
+        return redirect()->back();
     }
 }

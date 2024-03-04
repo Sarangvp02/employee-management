@@ -101,13 +101,11 @@
                                             btn-warning">Payment</a> -->
                                             <!-- <a href="{{route('managesalary.detail',$user->id)}}"
                                                 class="btn btn-sm btn-warning">Payment</a> -->
-                                            <!-- <form id="delete-form-{{ $user->id }}"
+                                            <form id="delete-form-{{ $user->id }}"
                                                 action="{{route('user.delete',$user->id)}}" method="put">
-                                                @csrf -->
-
-                                            <!-- <button type="button" onclick="deletePost({{ $user->id }})"
-                                                class="btn btn-sm btn-danger">Delete</button> -->
-                                            <!-- </form> -->
+                                                @csrf
+                                                <button class="btn btn-danger" type="submit">Delete</button>
+                                            </form>
                                         </td>
                                     </tr>
 

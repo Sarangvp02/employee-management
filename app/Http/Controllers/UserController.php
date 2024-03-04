@@ -6,6 +6,7 @@ use App\User;
 use Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Log;
 
 class UserController extends Controller
 {
@@ -118,15 +119,6 @@ class UserController extends Controller
         if(!Gate::allows('isAdmin')){
             abort(401);
         }
-        $request -> validate([
-            'username' => 'required',
-            'image' => 'required',
-            'fname' => 'required',
-            'lname' => 'required',
-            'email' => 'required',
-          //  'password' => 'required',
-//            'status' => 'required',
-        ]);
         $user = User::find($id);
         $user -> username = $request -> username;
 //        $user -> image = $request -> image;
@@ -171,13 +163,14 @@ class UserController extends Controller
      */
     public function delete($id)
     {
+        Log::error($id);
         if(!Gate::allows('isAdmin')){
             abort(401);
         }
         $user = User::find($id);
         $user -> delete();
-        Toastr::error('Employee successfully deleted!','Deleted');
-        return redirect()->route('user');
+        Toastr::error('User successfully deleted!','Deleted');
+        return redirect()->back();
     }
 
     public function search(Request $request){

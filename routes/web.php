@@ -42,7 +42,7 @@ Route::group(['middleware' => 'auth'], function (){
     Route::post('designation/store',        [ 'as'=>'designation.store',        'uses' => 'DesignationController@store']);
     Route::get('designation/edit/{id}',     [ 'as'=>'designation.edit',         'uses' => 'DesignationController@edit']);
     Route::post('designation/update/{id}',  [ 'as'=>'designation.update',       'uses' => 'DesignationController@update']);
-    Route::get('designation/delete/{id}',   [ 'as'=>'designation.delete',       'uses' => 'DesignationController@delete']);
+    Route::post('designation/delete/{id}',   [ 'as'=>'designation.delete',       'uses' => 'DesignationController@delete']);
 
     Route::get('department',               [ 'as'=>'department',              'uses' => 'DepartmentController@index']);
     Route::get('department/create',        [ 'as'=>'department.create',       'uses' => 'DepartmentController@create']);
