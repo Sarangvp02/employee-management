@@ -18,12 +18,12 @@
         <div class="page-breadcrumb">
             <div class="row">
                 <div class="col-12 d-flex no-block align-items-center">
-                    <h4 class="page-title">System Management</h4>
+                    <h4 class="page-title">Department Management</h4>
                     <div class="ml-auto text-right">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><a href="{{route('employee')}}">Department</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><a href="{{route('department')}}">Department</a></li>
                             </ol>
                         </nav>
                     </div>
@@ -34,22 +34,21 @@
             <div class="container-fluid">
 
                 <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-md-12">
                         <div class="card">
                             <form action="{{route('department.store')}}" method="post" class="form-horizontal">
                                 @csrf
                                 <div class="card-body">
-                                    <h4 class="card-title">Department</h4>
                                     <div class="form-group row">
-                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label">Department Name</label>
-                                        <div class="col-sm-9">
+                                        <label for="fname" class="col-sm-12 control-label col-form-label">Department Name</label>
+                                        <div class="col-sm-12">
                                             <input type="text" name="department_name" class="form-control" id="fname" placeholder="Enter a department name">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="border-top">
                                     <div class="card-body">
-                                        <button type="submit" class="btn btn-dark">Add</button>
+                                        <button type="submit" class="btn btn-success">Create</button>
                                     </div>
                                 </div>
                             </form>

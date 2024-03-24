@@ -23,9 +23,12 @@
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-2">
-                        <a class="btn btn-lg btn-dark" href="{{route('salary.create')}}">Add salary</a>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <a class="btn btn-lg btn-success" href="{{route('salary.create')}}">Add salary</a>
+                        </div>
                     </div>
+                    @if(count($salaries) > 0)
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
@@ -64,12 +67,9 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
-
-            <footer class="footer text-center">
-                All Rights Reserved by Khoz Informatics Pvt. Ltd. Designed and Developed by <a href="https://khozinfo.com/">Khozinfo</a>.
-            </footer>
         </div>
     </div>
 

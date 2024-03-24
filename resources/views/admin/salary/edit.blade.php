@@ -32,22 +32,21 @@
         </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <div class="card">
                         <form action="{{route('salary.update',$salary->id)}}" method="post" class="form-horizontal">
                             @csrf
                             <div class="card-body">
-                                <h4 class="card-title">Salary</h4>
                                 <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Salary amount</label>
-                                    <div class="col-sm-9">
+                                    <label for="fname" class="col-sm-12 control-label col-form-label">Salary amount</label>
+                                    <div class="col-sm-12">
                                         <input type="text" name="salary_amount" class="form-control" id="fname" value="{{$salary->salary_amount}}">
                                     </div>
                                 </div>
                             </div>
                             <div class="border-top">
                                 <div class="card-body">
-                                    <button type="submit" class="btn btn-dark">Add</button>
+                                    <button type="submit" class="btn btn-success">Update</button>
                                 </div>
                             </div>
                         </form>

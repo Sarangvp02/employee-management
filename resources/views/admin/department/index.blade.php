@@ -9,12 +9,12 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Employee Management</h4>
+                        <h4 class="page-title">Department Management</h4>
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page"><a href="{{route('employee')}}">Employee</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"><a href="{{route('department')}}">Department</a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -26,13 +26,16 @@
             <div class="container-fluid">
 
                 <div class="row">
-                    <div class="col-md-2">
-                        <a class="btn btn-lg btn-dark" href="{{route('department.create')}}">Add department</a>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <a class="btn btn-lg btn-success" href="{{route('department.create')}}">Add Department</a>
+                        </div>
                     </div>
+                    @if(count($departments) > 0)
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Employee List</h5>
+                                <h5 class="card-title">Department List</h5>
                                 <div class="table-responsive">
                                     <table id="zero_config" class="table table-striped table-bordered">
                                         <thead>
@@ -50,10 +53,8 @@
                                             <td>
                                                 <form id="delete-form-{{ $department->id }}" action="{{route('department.delete',$department->id)}}" method="put">
                                                     @csrf
-                                                    @method('DELETE')
-                                                       <a href="{{route('department.edit',$department->id)}}" class="btn btn-sm btn-dark">Edit</a>
-                                                    <button type="button" onclick="deletePost({{ $department->id }})" class="btn btn-sm btn-danger">Delete</button>
-                                                    {{--onclick="return confirm('Are you sure?')"--}}
+                                                    <a href="{{route('department.edit',$department->id)}}" class="btn btn-sm btn-dark">Edit</a>
+                                                    <a href="{{route('department.delete',$department->id)}}" class="btn btn-sm btn-danger">Delete</a>
                                                 </form>
                                             </td>
                                         </tr>
@@ -66,6 +67,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>
 
                 {{--sweetalert box for deleting start--}}
@@ -110,10 +112,6 @@
             {{--sweetalert box for deleting end--}}
             </div>
 
-
-            <footer class="footer text-center">
-                All Rights Reserved by Khoz Informatics Pvt. Ltd. Designed and Developed by <a href="https://khozinfo.com/">Khozinfo</a>.
-            </footer>
         </div>
     </div>
 

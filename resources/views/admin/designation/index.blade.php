@@ -39,6 +39,7 @@
                             </div>
                         </div>
                     </div>
+                    @if(count($designations)>0)
                     <div class="col- p-0">
                         <div class="card">
                             <div class="card-body">
@@ -81,6 +82,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>
 
             </div>
