@@ -34,27 +34,26 @@
             <div class="container-fluid">
 
                 <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-md-12">
                         <div class="card">
                             <form action="{{route('vacancy.store')}}" method="post" class="form-horizontal">
                                 @csrf
                                 <div class="card-body">
-                                    <h4 class="card-title">Vacancy</h4>
                                     <div class="form-group row">
-                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label">Vacancy</label>
-                                        <div class="col-sm-9">
+                                        <label for="fname" class="col-sm-12 control-label col-form-label">Vacancy</label>
+                                        <div class="col-sm-12">
                                             <input type="text" name="vacancy" class="form-control" id="vacancy" placeholder="Enter the vacancy">
                                         </div>
                                         <br><br>
-                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label">Nos </label>
-                                        <div class="col-sm-9">
+                                        <label for="fname" class="col-sm-12 control-label col-form-label">Nos </label>
+                                        <div class="col-sm-12">
                                             <input type="number" name="qty" class="form-control" id="qty" placeholder="Enter vacancy nos">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="border-top">
                                     <div class="card-body">
-                                        <button type="submit" class="btn btn-dark">Create</button>
+                                        <button type="submit" class="btn btn-success">Create</button>
                                     </div>
                                 </div>
                             </form>
